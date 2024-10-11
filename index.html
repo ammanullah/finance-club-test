@@ -148,6 +148,14 @@ nav ul li a {
     right: 20px;
     z-index: 1000;
   }
+
+  #nav-list {
+    transform: translateY(-100%);
+  }
+
+  .show-nav #nav-list {
+    transform: translateY(0);
+  }
 }
 
     /* Hero Banner */
@@ -350,11 +358,11 @@ nav ul li a {
   </style>
   <script>
   function toggleNav() {
-    const navList = document.getElementById('nav-list');
-    navList.classList.toggle('show-nav');
-    const hamburger = document.querySelector('.hamburger');
-    hamburger.classList.toggle('show-nav');
-  }
+  const navList = document.getElementById('nav-list');
+  navList.classList.toggle('show-nav');
+  const hamburger = document.querySelector('.hamburger');
+  hamburger.classList.toggle('show-nav');
+}
 </script>
 </head>
 <body>
