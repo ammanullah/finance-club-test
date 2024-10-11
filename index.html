@@ -68,95 +68,37 @@ nav ul li a {
   font-size: 0.95rem;
 }
 
-/* Responsive Navigation */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-    background-color: #FFFFFF;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease;
-  }
+/* Styles for mobile devices */
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide the navigation links initially */
+    }
 
-  nav ul li {
-    padding: 10px 20px;
-    border-bottom: 1px solid #ccc;
-  }
+    nav ul.show-menu {
+        display: block; /* Show the menu when the 'show-menu' class is added */
+    }
 
-  nav ul li:last-child {
-    border-bottom: none;
-  }
+    .menu-icon {
+        display: block; /* Show the hamburger icon */
+    }
 
-  nav ul li a {
-    font-size: 1rem;
-  }
-
-  .show-nav {
-    transform: translateY(0);
-  }
+    nav ul li {
+        margin: 10px 0; /* Adjusting margin for mobile view */
+    }
 }
 
-/* Hamburger Menu */
-.hamburger {
-  display: none;
-  cursor: pointer;
+/* Style for larger screens (desktops/tablets) */
+@media screen and (min-width: 769px) {
+    nav ul {
+        display: flex; /* Show the full navigation */
+    }
+
+    .menu-icon {
+        display: none; /* Hide the hamburger icon */
+    }
 }
 
-.hamburger div {
-  width: 30px;
-  height: 3px;
-  background-color: #2d2d2d;
-  margin: 5px;
-  transition: all 0.3s ease;
-}
 
-.hamburger .line1 {
-  transform: rotate(-45deg) translate(-5px, 5px);
-}
-
-.hamburger .line2 {
-  opacity: 0;
-}
-
-.hamburger .line3 {
-  transform: rotate(45deg) translate(-5px, -5px);
-}
-
-.show-nav .hamburger .line1 {
-  transform: rotate(45deg) translate(5px, -5px);
-}
-
-.show-nav .hamburger .line2 {
-  opacity: 1;
-}
-
-.show-nav .hamburger .line3 {
-  transform: rotate(-45deg) translate(5px, 5px);
-}
-
-/* Show Navigation on Hamburger Click */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-  }
-
-  #nav-list {
-    transform: translateY(-100%);
-  }
-
-  .show-nav #nav-list {
-    transform: translateY(0);
-  }
-}
 
     /* Hero Banner */
     .banner {
@@ -357,12 +299,10 @@ nav ul li a {
     }
   </style>
   <script>
-  function toggleNav() {
-  const navList = document.getElementById('nav-list');
-  navList.classList.toggle('show-nav');
-  const hamburger = document.querySelector('.hamburger');
-  hamburger.classList.toggle('show-nav');
-}
+  document.querySelector('.menu-icon').addEventListener('click', function() {
+    document.querySelector('nav ul').classList.toggle('show-menu');
+});
+
 </script>
 </head>
 <body>
@@ -370,19 +310,17 @@ nav ul li a {
   <header>
     <div class="logo">Finance Club</div>
     <nav>
-      <div class="hamburger" onclick="toggleNav()">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
+      <div class="menu-icon">
+          <i class="fa fa-bars"></i> <!-- You can use a hamburger icon here -->
       </div>
-      <ul id="nav-list">
-        <li><a href="#">Glossary</a></li>
-        <li><a href="#">Resources</a></li>
-        <li><a href="#">Modules</a></li>
-        <li><a href="#">Market Updates</a></li>
-        <li><a href="#">Events</a></li>
+      <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
       </ul>
-    </nav>
+  </nav>
+  
   </header>
 
   <!-- Hero Section -->
