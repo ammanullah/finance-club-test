@@ -51,18 +51,104 @@
       color: #000000; /* JPMorgan’s dark blue */
     }
     nav ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-    }
-    nav ul li {
-      padding: 10px;
-    }
-    nav ul li a {
-      color: #2d2d2d;
-      font-weight: bold;
-      font-size: 0.95rem;
-    }
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul li {
+  padding: 10px;
+}
+
+nav ul li a {
+  color: #2d2d2d;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #FFFFFF;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  nav ul li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  nav ul li:last-child {
+    border-bottom: none;
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+  }
+
+  .show-nav {
+    transform: translateY(0);
+  }
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 30px;
+  height: 3px;
+  background-color: #2d2d2d;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.hamburger .line1 {
+  transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.hamburger .line2 {
+  opacity: 0;
+}
+
+.hamburger .line3 {
+  transform: rotate(45deg) translate(-5px, -5px);
+}
+
+.show-nav .hamburger .line1 {
+  transform: rotate(45deg) translate(5px, -5px);
+}
+
+.show-nav .hamburger .line2 {
+  opacity: 1;
+}
+
+.show-nav .hamburger .line3 {
+  transform: rotate(-45deg) translate(5px, 5px);
+}
+
+/* Show Navigation on Hamburger Click */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+}
 
     /* Hero Banner */
     .banner {
@@ -262,13 +348,26 @@
       }
     }
   </style>
+  <script>
+  function toggleNav() {
+    const navList = document.getElementById('nav-list');
+    navList.classList.toggle('show-nav');
+    const hamburger = document.querySelector('.hamburger');
+    hamburger.classList.toggle('show-nav');
+  }
+</script>
 </head>
 <body>
   <!-- Header -->
   <header>
     <div class="logo">Finance Club</div>
     <nav>
-      <ul>
+      <div class="hamburger" onclick="toggleNav()">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <ul id="nav-list">
         <li><a href="#">Glossary</a></li>
         <li><a href="#">Resources</a></li>
         <li><a href="#">Modules</a></li>
