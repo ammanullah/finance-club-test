@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Finance Club - Marwadi University</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Merriweather", serif;
+      font-weight: 300;
+      font-style: normal;
+      color: #2d2d2d;
+      background-color: #f7f7f7;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: #0074b8; /* Professional accent color */
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #000000; /* Darker hover effect */
+    }
+
+    /* Header Styling */
+    header {
+      background-color: #FFFFFF;
+      padding: 20px 10%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #000000; /* JPMorgan’s dark blue */
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    nav ul li {
+      padding: 10px;
+    }
+    nav ul li a {
+      color: #2d2d2d;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    /* Hero Banner */
+    .banner {
+      background: url('your-banner-image.jpg') no-repeat center center/cover;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      background-color: #000000;
+      background-blend-mode: multiply;
+    }
+
+    /* Main Section */
+    .main-content {
+      padding: 50px 10%;
+      background-color: #EADDCA;
+    }
+    .main-content h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #000000;
+    }
+    .cards {
+      display: flex;
+      gap: 30px;
+      justify-content: space-between;
+    }
+    .card {
+      flex: 1;
+      padding: 30px;
+      background-color: #FFFFFF;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+    .card h3 {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      color: #000000;
+    }
+    .card p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      color: #666666;
+    }
+    .card a {
+      font-weight: bold;
+      font-size: 1rem;
+      color: #954535;
+      display: inline-block;
+      padding: 10px 15px;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .card a:hover {
+      background-color: #e0e0e0;
+    }
+
+    /* Button Styling */
+    .action-btn {
+      padding: 12px 20px;
+      background-color: #0074b8;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .action-btn:hover {
+      background-color: #000000;
+    }
+
+    /* About Section */
+    .about-section {
+      padding: 50px 10%;
+      background-color: #fff;
+    }
+    .about-section h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #000000;
+    }
+    .about-section p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      color: #666666;
+    }
+
+    /* Leadership Section */
+    .leadership-section {
+      padding: 50px 10%;
+      background-color: #2B1B17;
+    }
+    .leadership-section h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #FFFFFF;
+    }
+    .leadership-cards {
+      display: flex;
+      gap: 30px;
+      justify-content: space-between;
+    }
+    .leadership-card {
+      flex: 1;
+      padding: 30px;
+      background-color: #FFFFFF;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .leadership-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+    .leadership-card h3 {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      color: #000000;
+    }
+    .leadership-card p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      color: #666666;
+    }
+
+    /* News Section */
+    .news-section {
+      padding: 50px 10%;
+      background-color: #FFFFFF;
+    }
+    .news-section h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #000000;
+    }
+    .news-cards {
+      display: flex;
+      gap: 30px;
+      justify-content: space-between;
+    }
+    .news-card {
+      flex: 1;
+      padding: 30px;
+      background-color: #FFFFFF;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .news-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+    .news-card h3 {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      color: #000000;
+    }
+    .news-card p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      color: #666666;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #000000;
+      padding: 40px 10%;
+      color: white;
+      text-align: center;
+    }
+    .footer p {
+      margin-bottom: 15px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media(max-width: 1024px) {
+      .cards {
+        flex-direction: column;
+      }
+      .leadership-cards {
+        flex-direction: column;
+      }
+      .news-cards {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">Finance Club</div>
+    <nav>
+      <ul>
+        <li><a href="#">Glossary</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Modules</a></li>
+        <li><a href="#">Market Updates</a></li>
+        <li><a href="#">Events</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="banner">
+    <div>Finance for the Future</div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="main-content">
+    <h2>Explore Our Sections</h2>
+    <div class="cards">
+      <!-- Financial Glossary -->
+      <div class="card">
+        <h3>Financial Glossary</h3>
+        <p>Learn the essential terms and definitions in the world of finance, so you can speak the language of money.</p>
+        <a href="#">Explore Glossary →</a>
+      </div>
+      <!-- Financial Resources -->
+      <div class="card">
+        <h3>Financial Resources</h3>
+        <p>Get access to downloadable templates and guides to enhance your financial analysis and planning skills.</p>
+        <a href="#">Access Resources →</a>
+      </div>
+      <!-- Modules and Articles -->
+      <div class="card">
+        <h3>Modules & Articles</h3>
+        <p>Find curated articles on financial topics from technical analysis to market trends, grouped into categories.</p>
+        <a href="#">Read Articles →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <h2>About Us</h2>
+    <p>The Finance Club at the Faculty of Management Studies, Marwadi University, is a dynamic platform aimed at fostering financial literacy and empowering students with the knowledge and skills necessary to excel in the world of finance. As an active community of aspiring financial professionals, the club provides opportunities for hands-on learning through workshops, seminars, and competitions focused on investment strategies, market analysis, and financial planning.</p></br>
+
+    <p>Our mission is to bridge the gap between academic concepts and real-world financial challenges by offering resources such as a comprehensive financial glossary, curated modules on industry-relevant topics, and cutting-edge tools for financial analysis. The club also encourages collaboration, research, and networking, allowing members to connect with experts and stay informed about the latest trends in the global markets.</p></br>
+      
+    <p>Whether you are passionate about stocks, interested in behavioral finance, or eager to dive deep into financial markets, the Finance Club offers a supportive environment to sharpen your skills and achieve your career goals. Join us in exploring the vast and exciting world of finance!</p>
+  </section>
+
+  <!-- Leadership Section -->
+  <section class="leadership-section">
+    <h2>Our Leadership</h2>
+    <div class="leadership-cards">
+      <!-- Leadership Card 1 -->
+      <div class="leadership-card">
+        <h3>John Doe</h3>
+        <p>Founder and CEO</p>
+      </div>
+      <!-- Leadership Card 2 -->
+      <div class="leadership-card">
+        <h3>Jane Smith</h3>
+        <p>Co-Founder and CTO</p>
+      </div>
+      <!-- Leadership Card 3 -->
+      <div class="leadership-card">
+        <h3>Bob Johnson</h3>
+        <p>Head of Marketing</p>
+      </div>
+    </div>
+  </br>
+  <div class="leadership-cards">
+    <!-- Leadership Card 1 -->
+    <div class="leadership-card">
+      <h3>John Doe</h3>
+      <p>Founder and CEO</p>
+    </div>
+    <!-- Leadership Card 2 -->
+    <div class="leadership-card">
+      <h3>Jane Smith</h3>
+      <p>Co-Founder and CTO</p>
+    </div>
+    <!-- Leadership Card 3 -->
+    <div class="leadership-card">
+      <h3>Bob Johnson</h3>
+      <p>Head of Marketing</p>
+    </div>
+  </div>
+</br>
+<div class="leadership-cards">
+  <!-- Leadership Card 1 -->
+  <div class="leadership-card">
+    <h3>John Doe</h3>
+    <p>Founder and CEO</p>
+  </div>
+  <!-- Leadership Card 2 -->
+  <div class="leadership-card">
+    <h3>Jane Smith</h3>
+    <p>Co-Founder and CTO</p>
+  </div>
+  <!-- Leadership Card 3 -->
+  <div class="leadership-card">
+    <h3>Bob Johnson</h3>
+    <p>Head of Marketing</p>
+  </div>
+</div>
+</br>
+<div class="leadership-cards">
+  <!-- Leadership Card 1 -->
+  <div class="leadership-card">
+    <h3>John Doe</h3>
+    <p>Founder and CEO</p>
+  </div>
+  <!-- Leadership Card 2 -->
+  <div class="leadership-card">
+    <h3>Jane Smith</h3>
+    <p>Co-Founder and CTO</p>
+  </div>
+  <!-- Leadership Card 3 -->
+  <div class="leadership-card">
+    <h3>Bob Johnson</h3>
+    <p>Head of Marketing</p>
+  </div>
+</div>
+</br>
+  </section>
+
+  <!-- News Section -->
+  <section class="news-section">
+    <h2>Latest News</h2>
+    <div class="news-cards">
+      <!-- News Card 1 -->
+      <div class="news-card">
+        <h3>Market Update: Q2 2023</h3>
+        <p>Get the latest insights on market trends and analysis.</p>
+        <a href="#">Read More →</a>
+      </div>
+      <!-- News Card 2 -->
+      <div class="news-card">
+        <h3>New Resource: Financial Modeling Guide</h3>
+        <p>Learn how to create a comprehensive financial model with our latest guide.</p>
+        <a href="#">Download Now →</a>
+      </div>
+      <!-- News Card 3 -->
+      <div class="news-card">
+        <h3>Upcoming Event: Finance Conference 2023</h3>
+        <p>Join us for our annual finance conference, featuring industry experts and networking opportunities.</p>
+        <a href="#">Register Now →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call-to-Action Section -->
+  <section style="text-align: center; padding: 50px 10%; background-color: #FFFFFF;">
+    <h2>Stay Updated with Market News</h2>
+    <p>Sign up for weekly updates on market trends and financial insights curated by our team.</p>
+    <button class="action-btn">Subscribe Now</button>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2024 Finance Club, Marwadi University | All Rights Reserved</p>
+    <p>Contact Us | <a href="#" style="color: #FFFFFF; text-decoration: underline;">Privacy Policy</a></p>
+    <ul style="list-style: none; display: flex; gap: 20px; justify-content: center; margin-top: 20px;">
+      <li><a href="#" style="color: #FFFFFF; font-size: 1.5rem;"><i class="fab fa-facebook-f"></i></a></li>
+      <li><a href="#" style="color: #FFFFFF; font-size: 1.5rem;"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="#" style="color: #FFFFFF; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="#" style="color: #FFFFFF; font-size: 1.5rem;"><i class="fab fa-linkedin-in"></i></a></li>
+    </ul>
+  </footer>
+</body>
+</html>
