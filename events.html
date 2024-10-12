@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Finance Club - Marwadi University</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Merriweather", serif;
+      font-weight: 300;
+      font-style: normal;
+      color: #2d2d2d;
+      background-color: #f7f7f7;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: #000; /* Professional accent color */
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #000000; /* Darker hover effect */
+    }
+
+    /* Header Styling */
+    header {
+      background-color: #FFFFFF;
+      padding: 20px 10%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #000000; /* JPMorgan’s dark blue */
+    }
+    nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul li {
+  padding: 10px;
+}
+
+nav ul li a {
+  color: #2d2d2d;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.menu-icon {
+  display: none; /* Initially hide on larger screens */
+  font-size: 2rem; /* Increase the size */
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: block; /* Show on smaller screens */
+  }
+
+  nav ul {
+    display: none; /* Hide the navigation links */
+  }
+
+  nav ul.show-menu {
+    display: block; /* Show the menu when active */
+    position: absolute;
+    top: 60px; /* Position below the header */
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 20px;
+  }
+
+  nav ul li {
+    margin: 10px 0; /* Adjust spacing for mobile */
+  }
+}
+
+
+
+
+    /* Hero Banner */
+    .banner {
+      background: url('') no-repeat center center/cover;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ffffff;
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      background-color: #2B1B17;;
+      background-blend-mode: multiply;
+    }
+
+
+    /* Leadership Section */
+    .leadership-section {
+      padding: 50px 10%;
+      background-color: #ffffff;
+    }
+    .leadership-section h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #000000;
+    }
+    .leadership-cards {
+      display: flex;
+      gap: 30px;
+      justify-content: space-between;
+    }
+    .leadership-card {
+      flex: 1;
+      padding: 30px;
+      background-color: #FFFFFF;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .leadership-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+    .leadership-card h3 {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      color: #000000;
+    }
+    .leadership-card p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      color: #666666;
+    }
+    .leadership-card[name="l2"] {
+    background-color: #2B1B17;
+    color: #FFFFFF;
+  }
+
+    /* News Section */
+    .news-section {
+      padding: 50px 10%;
+      background-color: #FFFFFF;
+    }
+    .news-section h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #000000;
+    }
+    .news-cards {
+      display: flex;
+      gap: 30px;
+      justify-content: space-between;
+    }
+    .news-cards a {
+      color: #954535;
+    }
+    .news-cards a:hover {
+      color: #000000;
+    }
+    .news-card {
+      flex: 1;
+      padding: 30px;
+      background-color: #FFFFFF;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .news-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+    .news-card h3 {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      color: #000000;
+    }
+    .news-card p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      color: #666666;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #2B1B17;
+      padding: 40px 10%;
+      color: white;
+      text-align: center;
+    }
+    .footer p {
+      margin-bottom: 15px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media(max-width: 1024px) {
+      .cards {
+        flex-direction: column;
+      }
+      .leadership-cards {
+        flex-direction: column;
+      }
+      .news-cards {
+        flex-direction: column;
+      }
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      document.querySelector('.menu-icon').addEventListener('click', function() {
+        document.querySelector('nav ul').classList.toggle('show-menu');
+      });
+    };
+  </script>  
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo"><a href="index.html">Finance Club</a></div>
+    <nav>
+      <div class="menu-icon">
+        <i class="fa fa-bars"></i>
+      </div>      
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="glossary.html">Glossary</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="modules.html">Modules</a></li>
+        <li><a href="market-updates.html">Market Updates</a></li>
+        <li><a href="events.html">Events</a></li>
+      </ul>
+  </nav>
+  
+  </header>
+
+  <!-- Hero Section -->
+  <!--section class="banner">
+    <div>Events</div>
+  </section-->
+
+
+  <!-- Leadership Section -->
+  <section class="leadership-section">
+    <h2>Upcoming Events</h2>
+    <div class="leadership-cards">
+      <!-- Leadership Card 1 -->
+      <div class="leadership-card">
+        <h3>Financial Vocab Games</h3>
+        <p>15th October, 2024 | 11:00 am onwards | Outer Seminar Hall, Tagore Building, MU Campus</p>
+      </div>
+    </div>
+</br>
+</br>
+<h2>Past Events</h2>
+<div class="leadership-cards">
+  <div class="leadership-card">
+    <h3>Vishleshan 2024</h3>
+    <p>Expert panel discussion on Union Budget 2024</p>
+  </div>
+  </div>
+</br>
+</br>
+  <div class="leadership-cards">
+    <div class="leadership-card">
+      <h3>Avlokan 2024</h3>
+      <p>A group discussion on Union Budget 2024</p>
+    </div>
+    </div>
+</div>
+</br>
+</div>
+</br>
+  </section>
+
+
+  <!-- Call-to-Action Section -->
+  <section style="text-align: center; padding: 50px 10%; background-color: #FFFFFF;">
+    <h2></h2>
+    <p></p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2024 Finance Club - Faculty od Management Studies, Marwadi University | All Rights Reserved</p>
+    <p>Contact Us | <a href="#" style="color: #FFFFFF; text-decoration: underline;">Privacy Policy</a></p>
+  </footer>
+</body>
+</html>
