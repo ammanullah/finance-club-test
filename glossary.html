@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Discover the Finance Club at Marwadi University, where students explore financial literacy, market analysis, and investment strategies. Access a comprehensive financial glossary, resources, articles, and stay informed with the latest market updates and financial news.">
+  <title>Finance Club - Marwadi University</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Merriweather", serif;
+      font-weight: 300;
+      font-style: normal;
+      color: #2d2d2d;
+      background-color: #f7f7f7;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: #000; /* Professional accent color */
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #000000; /* Darker hover effect */
+    }
+
+    /* Header Styling */
+    header {
+      background-color: #FFFFFF;
+      padding: 20px 10%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #000000; /* JPMorgan’s dark blue */
+    }
+    nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul li {
+  padding: 10px;
+}
+
+nav ul li a {
+  color: #2d2d2d;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.menu-icon {
+  display: none; /* Initially hide on larger screens */
+  font-size: 2rem; /* Increase the size */
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: block; /* Show on smaller screens */
+  }
+
+  nav ul {
+    display: none; /* Hide the navigation links */
+  }
+
+  nav ul.show-menu {
+    display: block; /* Show the menu when active */
+    position: absolute;
+    top: 60px; /* Position below the header */
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 20px;
+  }
+
+  nav ul li {
+    margin: 10px 0; /* Adjust spacing for mobile */
+  }
+}
+
+
+
+
+    /* Hero Banner */
+    .banner {
+      background: url('img.jpeg') no-repeat center center/cover;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      background-color: #000000;
+      background-blend-mode: multiply;
+    }
+
+    /* Main Section */
+    .main-content {
+      padding: 50px 10%;
+      background-color: #EADDCA;
+    }
+    .main-content h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #000000;
+    }
+    .cards {
+      display: flex;
+      gap: 30px;
+      justify-content: space-between;
+    }
+    .card {
+      flex: 1;
+      padding: 30px;
+      background-color: #FFFFFF;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+    .card h3 {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      color: #000000;
+    }
+    .card p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      color: #666666;
+    }
+    .card a {
+      font-weight: bold;
+      font-size: 1rem;
+      color: #954535;
+      display: inline-block;
+      padding: 10px 15px;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .card a:hover {
+      background-color: #e0e0e0;
+    }
+
+    /* Button Styling */
+    .action-btn {
+      padding: 12px 20px;
+      background-color: #0074b8;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .action-btn:hover {
+      background-color: #000000;
+    }
+
+    /* About Section */
+    .about-section {
+      padding: 50px 10%;
+      background-color: #fff;
+    }
+    .about-section h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #000000;
+    }
+    .about-section p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      color: #666666;
+    }
+
+    /* Leadership Section */
+    .leadership-section {
+      padding: 50px 10%;
+      background-color: #FFFFFF;
+    }
+    .leadership-section h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #000000;
+    }
+    .leadership-cards {
+      display: flex;
+      gap: 30px;
+      justify-content: space-between;
+    }
+    .leadership-card {
+      flex: 1;
+      padding: 30px;
+      background-color: #FFFFFF;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .leadership-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+    .leadership-card h3 {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      color: #000000;
+    }
+    .leadership-card p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      color: #666666;
+    }
+    .leadership-card[name="l2"] {
+    background-color: #2B1B17;
+  }
+
+    /* News Section */
+    .news-section {
+      padding: 50px 10%;
+      background-color: #FFFFFF;
+    }
+    .news-section h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #000000;
+    }
+    .news-cards {
+      display: flex;
+      gap: 30px;
+      justify-content: space-between;
+    }
+    .news-cards a {
+      color: #954535;
+    }
+    .news-cards a:hover {
+      color: #000000;
+    }
+    .news-card {
+      flex: 1;
+      padding: 30px;
+      background-color: #FFFFFF;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .news-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+    .news-card h3 {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      color: #000000;
+    }
+    .news-card p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      color: #666666;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #2B1B17;
+      padding: 40px 10%;
+      color: white;
+      text-align: center;
+    }
+    .footer p {
+      margin-bottom: 15px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media(max-width: 1024px) {
+      .cards {
+        flex-direction: column;
+      }
+      .leadership-cards {
+        flex-direction: column;
+      }
+      .news-cards {
+        flex-direction: column;
+      }
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      document.querySelector('.menu-icon').addEventListener('click', function() {
+        document.querySelector('nav ul').classList.toggle('show-menu');
+      });
+    };
+  </script>  
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo"><a href="index.html">Finance Club</a></div>
+    <nav>
+      <div class="menu-icon">
+        <i class="fa fa-bars"></i>
+      </div>      
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="glossary.html">Glossary</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="modules.html">Modules</a></li>
+        <li><a href="market-updates.html">Market Updates</a></li>
+        <li><a href="events.html">Events</a></li>
+      </ul>
+  </nav>
+  
+  </header>
+
+  <!-- Hero Section -->
+  <!--section class="banner">
+    <div>Finance for the Future</div>
+  </section-->
+
+
+  <!-- Leadership Section -->
+  <section class="leadership-section">
+    <h2>Financial Glossary</h2>
+    <div class="leadership-cards">
+      <!-- Glossary Term 1 -->
+      <div class="leadership-card">
+        <h3>Assets</h3>
+        <p>Resources owned by an individual or company that have economic value and can be converted into cash.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 2 -->
+      <div class="leadership-card">
+        <h3>Arbitrage</h3>
+        <p>The practice of taking advantage of price differences in different markets for the same asset to make a profit.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 3 -->
+      <div class="leadership-card">
+        <h3>Annual Report</h3>
+        <p>A comprehensive report detailing a company’s activities and financial performance throughout the preceding year.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 4 -->
+      <div class="leadership-card">
+        <h3>Balance Sheet</h3>
+        <p>A financial statement that provides a snapshot of a company's financial position at a specific point in time, detailing assets, liabilities, and shareholders’ equity.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 5 -->
+      <div class="leadership-card">
+        <h3>Bonds</h3>
+        <p>Debt securities issued by entities such as governments or corporations to raise capital, where the issuer promises to repay the bondholder the principal amount along with interest.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 6 -->
+      <div class="leadership-card">
+        <h3>Bull Market</h3>
+        <p>A market condition characterized by rising asset prices and investor optimism.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 7 -->
+      <div class="leadership-card">
+        <h3>Capital Gains</h3>
+        <p>The profit earned from the sale of an asset like stocks or real estate.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 8 -->
+      <div class="leadership-card">
+        <h3>Commodities</h3>
+        <p>Basic goods used in commerce that are interchangeable with other goods of the same type, such as gold, oil, or wheat.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 9 -->
+      <div class="leadership-card">
+        <h3>Corporate Governance</h3>
+        <p>The system of rules, practices, and processes by which a company is directed and controlled.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 10 -->
+      <div class="leadership-card">
+        <h3>Debt-to-Equity Ratio</h3>
+        <p>A financial ratio indicating the relative proportion of shareholders' equity and debt used to finance a company's assets.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 11 -->
+      <div class="leadership-card">
+        <h3>Derivatives</h3>
+        <p>Financial contracts whose value is derived from an underlying asset, such as stocks, bonds, or commodities.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 12 -->
+      <div class="leadership-card">
+        <h3>Dividend</h3>
+        <p>A portion of a company's earnings distributed to its shareholders.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 13 -->
+      <div class="leadership-card">
+        <h3>Earnings Per Share (EPS)</h3>
+        <p>A company’s profit divided by the number of its outstanding shares, used to measure a company’s profitability.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 14 -->
+      <div class="leadership-card">
+        <h3>Equity</h3>
+        <p>The value of shares issued by a company or the value remaining in assets after deducting liabilities.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 15 -->
+      <div class="leadership-card">
+        <h3>Exchange-Traded Fund (ETF)</h3>
+        <p>A type of investment fund and exchange-traded product that holds assets like stocks, commodities, or bonds and is traded on stock exchanges.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 16 -->
+      <div class="leadership-card">
+        <h3>Fiscal Year</h3>
+        <p>A one-year period that companies and governments use for financial reporting and budgeting.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 17 -->
+      <div class="leadership-card">
+        <h3>Fixed Income</h3>
+        <p>A type of investment where the investor receives regular, fixed interest payments, such as bonds.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 18 -->
+      <div class="leadership-card">
+        <h3>Forex (Foreign Exchange)</h3>
+        <p>The marketplace for buying and selling currencies.</p>
+      </div>
+    </div>
+    <br>
+    <div class="leadership-cards">
+      <!-- Glossary Term 19 -->
+      <div class="leadership-card">
+        <h3>Gross Domestic Product (GDP)</h3>
+        <p>The total monetary value of all goods and services produced within a country’s borders in a specific time period.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 20 -->
+      <div class="leadership-card">
+        <h3>Hedge Fund</h3>
+        <p>An investment fund that uses a range of strategies, including leveraging or trading of non-traditional assets, to earn high returns for its investors.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 21 -->
+      <div class="leadership-card">
+        <h3>Index Fund</h3>
+        <p>A type of mutual fund or ETF designed to replicate the performance of a specific market index, such as the S&P 500.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 22 -->
+      <div class="leadership-card">
+        <h3>Inflation</h3>
+        <p>The rate at which the general level of prices for goods and services is rising, eroding purchasing power over time.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 23 -->
+      <div class="leadership-card">
+        <h3>Initial Public Offering (IPO)</h3>
+        <p>The process by which a private company offers shares to the public for the first time to raise capital.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 24 -->
+      <div class="leadership-card">
+        <h3>Interest Rate</h3>
+        <p>The proportion of a loan charged as interest to the borrower, typically expressed as an annual percentage of the loan amount.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 25 -->
+      <div class="leadership-card">
+        <h3>Leverage</h3>
+        <p>The use of borrowed money to increase the potential return on investment.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 26 -->
+      <div class="leadership-card">
+        <h3>Liquidity</h3>
+        <p>The ease with which an asset can be converted into cash without affecting its market price.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 27 -->
+      <div class="leadership-card">
+        <h3>Market Capitalization</h3>
+        <p>The total value of a company’s outstanding shares of stock, calculated as share price times the number of shares.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 28 -->
+      <div class="leadership-card">
+        <h3>Mutual Fund</h3>
+        <p>An investment vehicle that pools money from many investors to purchase a diversified portfolio of stocks, bonds, or other securities.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 29 -->
+      <div class="leadership-card">
+        <h3>Net Asset Value (NAV)</h3>
+        <p>The value per share of a mutual fund or ETF, calculated by dividing the total value of the fund's assets by the number of shares outstanding.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 30 -->
+      <div class="leadership-card">
+        <h3>Options</h3>
+        <p>Financial derivatives that give buyers the right, but not the obligation, to buy or sell an underlying asset at a set price before a certain date.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 31 -->
+      <div class="leadership-card">
+        <h3>Portfolio</h3>
+        <p>A collection of financial investments like stocks, bonds, commodities, and cash held by an individual or institution.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 32 -->
+      <div class="leadership-card">
+        <h3>Price-to-Earnings Ratio (P/E Ratio)</h3>
+        <p>A valuation ratio of a company's current share price compared to its per-share earnings.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 33 -->
+      <div class="leadership-card">
+        <h3>Risk Management</h3>
+        <p>The process of identifying, assessing, and controlling threats to an organization's capital and earnings.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 34 -->
+      <div class="leadership-card">
+        <h3>Shareholder</h3>
+        <p>An individual or institution that legally owns one or more shares of stock in a public or private corporation.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 35 -->
+      <div class="leadership-card">
+        <h3>Short Selling</h3>
+        <p>The sale of a security that the seller does not own, with the hope of buying it back at a lower price.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 36 -->
+      <div class="leadership-card">
+        <h3>Stock</h3>
+        <p>A type of security that signifies ownership in a corporation and represents a claim on part of the company’s assets and earnings.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 37 -->
+      <div class="leadership-card">
+        <h3>Volatility</h3>
+        <p>A statistical measure of the dispersion of returns for a given security or market index, often used to gauge market risk.</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="leadership-cards">
+      <!-- Glossary Term 38 -->
+      <div class="leadership-card">
+        <h3>Yield</h3>
+        <p>The earnings generated and realized on an investment over a particular period, expressed as a percentage of the investment's cost or market value.</p>
+      </div>
+    </div>
+    <br>
+        
+</div>
+</br>
+  </section>
+
+  <!-- Call-to-Action Section -->
+  <section style="text-align: center; padding: 50px 10%; background-color: #FFFFFF;">
+    <h2></h2>
+    <p></p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2024 Finance Club - Faculty od Management Studies, Marwadi University | All Rights Reserved</p>
+    <p>Contact Us | <a href="#" style="color: #FFFFFF; text-decoration: underline;">Privacy Policy</a></p>
+  </footer>
+</body>
+</html>
